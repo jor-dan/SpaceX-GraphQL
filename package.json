@@ -1,0 +1,51 @@
+{
+  "name": "spacex-graphql",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "homepage": "https://github.com/jor-dan/spacex-graphql",
+  "scripts": {
+    "build": "tsc",
+    "heroku-postbuild": "tsc",
+    "lint": "eslint **/*.ts",
+    "lint:fix": "eslint **/*.ts --fix",
+    "dev": "nodemon src/server.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.3.2",
+    "apollo-server-express": "^2.4.8",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.0.7",
+    "@types/jest": "^24.0.9",
+    "@types/supertest": "^2.0.7",
+    "@typescript-eslint/parser": "^1.4.2",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
+    "supertest": "^3.4.2",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3333"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jor-dan/spacex-graphql.git"
+  },
+  "author": "Jordan Owens",
+  "license": "MIT",
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "delay": "0",
+    "execMap": {
+      "ts": "ts-node"
+    }
+  }
+}
