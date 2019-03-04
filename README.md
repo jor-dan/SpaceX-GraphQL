@@ -15,19 +15,21 @@ Endpoint: `/graphql`
 
 ### Queries
 
-| Query    | Description                                 | Parameters                                                                           |
-| :------- | :------------------------------------------ | :----------------------------------------------------------------------------------- |
-| History  | SpaceX historical event(s)                  | `id: String`                                                                         |
-| Info     | SpaceX company information                  |                                                                                      |
-| Launch   | Info from an individual launch              | `id: String`                                                                         |
-| Launches | Info from multiple launches                 | `range: latest/next/past/upcoming`, `order: String`, `sort: String`, `ids: [String]` |
-| Roadster | Info from Roadster launched on Falcon Heavy |                                                                                      |
+| Query      | Description                                 | Parameters                                                                                                        |
+| :--------- | :------------------------------------------ | :---------------------------------------------------------------------------------------------------------------- |
+| History    | SpaceX historical event(s)                  | `limit: Int`, `offset: Int`, `id: String`                                                                         |
+| Info       | SpaceX company information                  |                                                                                                                   |
+| Launch     | Info from an individual launch              | `id: String`                                                                                                      |
+| Launches   | Info from multiple launches                 | `range: latest/next/past/upcoming`, `limit: Int`, `offset: Int`, `order: String`, `sort: String`, `ids: [String]` |
+| Roadster   | Info from Roadster launched on Falcon Heavy |                                                                                                                   |
 
 #### Parameters
 
-| Parameter | Description                                      |
-| :-------- | :----------------------------------------------- |
-| id        | ID of item being requested. (e.g. flight number) |
-| ids       | Array of IDs                                     |
-| order     | Set order of results (`asc` or `desc`)           |
-| sort      | Sort results by any value in the response        |
+| Parameter | Description                                            |
+| :-------- | :----------------------------------------------------- |
+| id        | ID of item being requested. (e.g. flight number)       |
+| ids       | Array of IDs                                           |
+| limit     | limit on the number of results returned                |
+| offset    | Offset or skip results from the beginning of the query |
+| order     | Set order of results (`asc` or `desc`)                 |
+| sort      | Sort results by any value in the response              |

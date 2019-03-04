@@ -2,10 +2,12 @@ import { gql } from 'apollo-server-express';
 
 const typeDefs = gql`
   type Query {
-    history(order: Order, sort: String, id: String): [History]
+    history(limit: Int, offset: Int, order: Order, sort: String, id: String): [History]
     info: Info
     launch(id: String): Launch
-    launches(range: LaunchRange, order: Order, sort: String, ids: [String]): [Launch]
+    launches(
+      range: LaunchRange, limit: Int, offset: Int, order: Order, sort: String, ids: [String]
+      ): [Launch]
     roadster: Roadster
   }
 

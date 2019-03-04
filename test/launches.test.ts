@@ -81,4 +81,21 @@ describe('Launches', () => {
       expect(launches[0].launch_success).toBeNull();
     });
   });
+
+  describe('Last Launch', () => {
+    beforeAll(async () => {
+      res = await supertest(app).post('/graphql')
+        .send({ query: '{ launches(range: latest) { launch_date_unix launch_success upcoming } }' });
+      ({ launches } = res.body.data);
+    });
+
+    it('should get one launch', () => {
+      expect(launches).toHaveLength(1);
+    });
+
+    it('should be in the past', () => {
+      expect(launches[0].upcoming).toBe(false);
+      expect(launches[0].launch_date_unix).toBeLessThan(Date.now());
+    });
+  });
 });

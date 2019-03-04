@@ -1,7 +1,9 @@
 const resolvers = {
   Query: {
-    history: (_, { order, sort, id }, { dataSources }) => dataSources.api.history({
-      order, sort, id,
+    history: (_, {
+      limit, offset, order, sort, id,
+    }, { dataSources }) => dataSources.api.history({
+      limit, offset, order, sort, id,
     }),
 
     info: (_, __, { dataSources }) => dataSources.api.info(),
@@ -9,9 +11,9 @@ const resolvers = {
     launch: (_, { id }, { dataSources }) => dataSources.api.launch({ id }),
 
     launches: (_, {
-      range, order, sort, ids,
+      range, limit, offset, order, sort, ids,
     }, { dataSources }) => dataSources.api.launches({
-      range, order, sort, ids,
+      range, limit, offset, order, sort, ids,
     }),
 
     roadster: (_, __, { dataSources }) => dataSources.api.roadster(),
