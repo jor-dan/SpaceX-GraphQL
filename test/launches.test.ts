@@ -25,7 +25,7 @@ describe('Launches', () => {
   describe('Specific Launches', () => {
     beforeAll(async () => {
       res = await supertest(app).post('/graphql')
-        .send({ query: '{ launches(ids: ["75", "80"]) { flight_number } }' });
+        .send({ query: '{ launches(ids: ["55", "76"]) { flight_number } }' });
       ({ launches } = res.body.data);
     });
 

@@ -15,21 +15,31 @@ Endpoint: `/graphql`
 
 ### Queries
 
-| Query      | Description                                 | Parameters                                                                                                        |
-| :--------- | :------------------------------------------ | :---------------------------------------------------------------------------------------------------------------- |
-| History    | SpaceX historical event(s)                  | `limit: Int`, `offset: Int`, `id: String`                                                                         |
-| Info       | SpaceX company information                  |                                                                                                                   |
-| Launch     | Info from an individual launch              | `id: String`                                                                                                      |
-| Launches   | Info from multiple launches                 | `range: latest/next/past/upcoming`, `limit: Int`, `offset: Int`, `order: String`, `sort: String`, `ids: [String]` |
-| Roadster   | Info from Roadster launched on Falcon Heavy |                                                                                                                   |
+Complete documentation about each query is available through the [SpaceX API Docs](https://docs.spacexdata.com).
+
+| Query       | Parameters                                                                                                        |
+| :---------- | :---------------------------------------------------------------------------------------------------------------- |
+| History     | `limit: Int`, `offset: Int`, `id: String`                                                                         |
+| Info        |                                                                                                                   |
+| Landingpad  | `id: String`                                                                                                      |
+| Landingpads | `limit: Int`, `offset: Int`                                                                                       |
+| Launch      | `id: String`                                                                                                      |
+| Launches    | `range: latest/next/past/upcoming`, `limit: Int`, `offset: Int`, `order: String`, `sort: String`, `ids: [String]` |
+| Launchpad   | `id: String`                                                                                                      |
+| Launchpads  | `limit: Int`, `offset: Int`                                                                                       |
+| Mission     | `id: String`                                                                                                      |
+| Missions    | `limit: Int`, `offset: Int`                                                                                       |
+| Payload     | `id: String`                                                                                                      |
+| Payloads    | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
+| Roadster    |                                                                                                                   |
 
 #### Parameters
 
-| Parameter | Description                                            |
-| :-------- | :----------------------------------------------------- |
-| id        | ID of item being requested. (e.g. flight number)       |
-| ids       | Array of IDs                                           |
-| limit     | limit on the number of results returned                |
-| offset    | Offset or skip results from the beginning of the query |
-| order     | Set order of results (`asc` or `desc`)                 |
-| sort      | Sort results by any value in the response              |
+| Parameter | Description                                                      |
+| :-------- | :--------------------------------------------------------------- |
+| id        | ID of item being requested (flight number/payload or mission id) |
+| ids       | Array of IDs                                                     |
+| limit     | limit on the number of results returned                          |
+| offset    | Offset or skip results from the beginning of the query           |
+| order     | Set order of results (`asc` or `desc`)                           |
+| sort      | Sort results by any value in the response                        |

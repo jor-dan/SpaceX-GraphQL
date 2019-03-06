@@ -4,10 +4,18 @@ const typeDefs = gql`
   type Query {
     history(limit: Int, offset: Int, order: Order, sort: String, id: String): [History]
     info: Info
+    landingpad(id: String): Landingpad
+    landingpads(limit: Int, offset: Int): [Landingpad]
     launch(id: String): Launch
     launches(
       range: LaunchRange, limit: Int, offset: Int, order: Order, sort: String, ids: [String]
       ): [Launch]
+    launchpad(id: String!): Launchpad
+    launchpads(limit: Int, offset: Int): [Launchpad]
+    mission(id: String!): Mission
+    missions(limit: Int, offset: Int): [Mission]
+    payload(id: String!): Payload
+    payloads(limit: Int, offset: Int, order: Order, sort: String): [Payload]
     roadster: Roadster
   }
 
@@ -62,6 +70,18 @@ const typeDefs = gql`
     summary: String
   }
 
+  type Landingpad {
+    id: String
+    full_name: String
+    status: String
+    location: Location
+    landing_type: String
+    attempted_landings: Int
+    successful_landings: Int
+    wikipedia: String
+    details: String
+  }
+
   type Launch {
     flight_number: Int
     mission_id: [String]
@@ -100,6 +120,19 @@ const typeDefs = gql`
     video_link: String
     youtube_id: String
     flickr_images: [String]
+  }
+
+  type Launchpad {
+    id: Int
+    status: String
+    location: Location
+    vehicles_launched: [String]
+    attempted_launches: Int
+    successful_launches: Int
+    wikipedia: String
+    details: String
+    site_id: String
+    site_name_long: String
   }
 
   type LaunchRocket {
@@ -169,10 +202,31 @@ const typeDefs = gql`
     fairing_deploy: Int
     first_stage_entry_burn: Int
     seco_1: Int
+    first_stage_landing_burn: Int
     first_stage_landing: Int
     second_stage_restart: Int
     seco_2: Int
     payload_deploy: Int
+    dragon_separation: Int
+  }
+
+  type Location {
+    name: String
+    region: String
+    latitude: Float
+    longitude: Float
+  }
+
+  type Mission {
+    name: String
+    mission_name: String
+    mission_id: String
+    manufacturers: [String]
+    payload_ids: [String]
+    wikipedia: String
+    website: String
+    twitter: String
+    description: String
   }
 
   type Payload {

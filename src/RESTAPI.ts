@@ -12,6 +12,10 @@ class SpaceXAPI extends RESTDataSource {
 
   info = () => this.get('info');
 
+  landingpad = ({ id }) => this.get(`landpads/${id}`);
+
+  landingpads = ({ limit, offset }) => this.get('landpads', body({ limit, offset }));
+
   launch = async ({ id }) => (await this.get('launches', { flight_number: id }))[0];
 
   launches = async ({
@@ -23,6 +27,22 @@ class SpaceXAPI extends RESTDataSource {
     }));
     return Array.isArray(launches) ? launches : [launches];
   }
+
+  launchpad = ({ id }) => this.get(`launchpads/${id}`);
+
+  launchpads = ({ limit, offset }) => this.get('launchpads', body({ limit, offset }));
+
+  mission = ({ id }) => this.get(`missions/${id}`);
+
+  missions = ({ limit, offset }) => this.get('missions', body({ limit, offset }));
+
+  payload = ({ id }) => this.get(`payloads/${id}`);
+
+  payloads = ({
+    limit, offset, order, sort,
+  }) => this.get('payloads', body({
+    limit, offset, order, sort,
+  }));
 
   roadster = () => this.get('roadster');
 }
