@@ -4,6 +4,22 @@ import body from './utils';
 class SpaceXAPI extends RESTDataSource {
   baseURL = 'https://api.spacexdata.com/v3/';
 
+  capsule = ({ capsule_serial }) => this.get(`capsules/${capsule_serial}`);
+
+  capsules = ({
+    range, limit, offset, order, sort,
+  }) => this.get(`capsules/${range || ''}`, body({
+    limit, offset, order, sort,
+  }));
+
+  core = ({ core_serial }) => this.get(`cores/${core_serial}`);
+
+  cores = ({
+    limit, offset, order, sort,
+  }) => this.get('cores', body({
+    limit, offset, order, sort,
+  }));
+
   history = ({
     limit, offset, order, sort, id,
   }) => (id ? this.get('history', { id }) : this.get('history', body({
@@ -16,7 +32,7 @@ class SpaceXAPI extends RESTDataSource {
 
   landingpads = ({ limit, offset }) => this.get('landpads', body({ limit, offset }));
 
-  launch = async ({ id }) => (await this.get('launches', { flight_number: id }))[0];
+  launch = ({ id }) => this.get(`launches/${id}`);
 
   launches = async ({
     range, limit, offset, sort, order, ids,
@@ -45,6 +61,14 @@ class SpaceXAPI extends RESTDataSource {
   }));
 
   roadster = () => this.get('roadster');
+
+  ship = ({ id }) => this.get(`ships/${id}`);
+
+  ships = ({
+    limit, offset, order, sort,
+  }) => this.get('ships', body({
+    limit, offset, order, sort,
+  }));
 }
 
 export default SpaceXAPI;

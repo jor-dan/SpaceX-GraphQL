@@ -1,5 +1,23 @@
 const resolvers = {
   Query: {
+    capsule: (_, { capsule_serial }, { dataSources }) => dataSources.api.capsule({
+      capsule_serial,
+    }),
+
+    capsules: (_, {
+      range, limit, offset, order, sort,
+    }, { dataSources }) => dataSources.api.capsules({
+      range, limit, offset, order, sort,
+    }),
+
+    core: (_, { core_serial }, { dataSources }) => dataSources.api.core({ core_serial }),
+
+    cores: (_, {
+      limit, offset, order, sort,
+    }, { dataSources }) => dataSources.api.cores({
+      limit, offset, order, sort,
+    }),
+
     history: (_, {
       limit, offset, order, sort, id,
     }, { dataSources }) => dataSources.api.history({
@@ -43,6 +61,14 @@ const resolvers = {
     }),
 
     roadster: (_, __, { dataSources }) => dataSources.api.roadster(),
+
+    ship: (_, { id }, { dataSources }) => dataSources.api.ship({ id }),
+
+    ships: (_, {
+      limit, offset, order, sort,
+    }, { dataSources }) => dataSources.api.ships({
+      limit, offset, order, sort,
+    }),
   },
 };
 

@@ -19,6 +19,10 @@ Complete documentation about each query is available through the [SpaceX API Doc
 
 | Query       | Parameters                                                                                                        |
 | :---------- | :---------------------------------------------------------------------------------------------------------------- |
+| Capsule     | `capsule_serial: String`                                                                                          |
+| Capsules    | `range: past/upcoming`, `limit: Int`, `offset: Int`, `order: String`, `sort: String`                              |
+| Core        | `core_serial: String`                                                                                             |
+| Cores       | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
 | History     | `limit: Int`, `offset: Int`, `id: String`                                                                         |
 | Info        |                                                                                                                   |
 | Landingpad  | `id: String`                                                                                                      |
@@ -35,11 +39,13 @@ Complete documentation about each query is available through the [SpaceX API Doc
 
 #### Parameters
 
-| Parameter | Description                                                      |
-| :-------- | :--------------------------------------------------------------- |
-| id        | ID of item being requested (flight number/payload or mission id) |
-| ids       | Array of IDs                                                     |
-| limit     | limit on the number of results returned                          |
-| offset    | Offset or skip results from the beginning of the query           |
-| order     | Set order of results (`asc` or `desc`)                           |
-| sort      | Sort results by any value in the response                        |
+| Parameter      | Description                                                      |
+| :------------- | :--------------------------------------------------------------- |
+| capsule_serial | Serial of capsule being requested (e.g. C112)                    |
+| core_serial    | Serial of core being requested (e.g. B1046)                      |
+| id             | ID of item being requested (flight number/payload or mission id) |
+| ids            | Array of IDs                                                     |
+| limit          | limit on the number of results returned                          |
+| offset         | Offset or skip results from the beginning of the query           |
+| order          | Set order of results (`asc` or `desc`)                           |
+| sort           | Sort results by any value in the response                        |

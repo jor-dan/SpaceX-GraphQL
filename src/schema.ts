@@ -2,6 +2,10 @@ import { gql } from 'apollo-server-express';
 
 const typeDefs = gql`
   type Query {
+    capsule(capsule_serial: String!): Capsule
+    capsules(range: CapsuleRange, limit: Int, offset: Int, order: Order, sort: String): [Capsule]
+    core(core_serial: String!): Core
+    cores(limit: Int, offset: Int, order: Order, sort: String): [Core]
     history(limit: Int, offset: Int, order: Order, sort: String, id: String): [History]
     info: Info
     landingpad(id: String): Landingpad
@@ -17,6 +21,13 @@ const typeDefs = gql`
     payload(id: String!): Payload
     payloads(limit: Int, offset: Int, order: Order, sort: String): [Payload]
     roadster: Roadster
+    ship(id: String!): Ship
+    ships(limit: Int, offset: Int, order: Order, sort: String): [Ship]
+  }
+
+  enum CapsuleRange {
+    past
+    upcoming
   }
 
   enum LaunchRange {
@@ -29,6 +40,40 @@ const typeDefs = gql`
   enum Order {
     asc
     desc
+  }
+
+  type BasicMission {
+    name: String
+    flight: Int
+  }
+
+  type Capsule {
+    capsule_serial: String
+    capsule_id: String
+    status: String
+    original_launch: String
+    original_launch_unix: Float
+    missions: [BasicMission]
+    landings: Int
+    type: String
+    details: String
+    reuse_count: Int
+  }
+
+  type Core {
+    core_serial: String
+    block: Int
+    status: String
+    original_launch: String
+    original_launch_unix: Float
+    missions: [BasicMission]
+    reuse_count: Int
+    rtls_attempts: Int
+    rtls_landings: Int
+    asds_attempts: Int
+    asds_landings: Int
+    water_landing: Boolean
+    details: String
   }
 
   type Headquarters {
@@ -152,10 +197,10 @@ const typeDefs = gql`
   }
 
   type LaunchRocketFirstStage {
-    cores: [LaunchRocketFirstStageCores]
+    cores: [LaunchRocketFirstStageCore]
   }
 
-  type LaunchRocketFirstStageCores {
+  type LaunchRocketFirstStageCore {
     core_serial: String
     flight: Int
     block: Int
@@ -260,6 +305,11 @@ const typeDefs = gql`
     mean_anomaly: Float
   }
 
+  type Position {
+    latitude: Float
+    longitude: Float
+  }
+
   type Roadster {
     name: String!
     launch_date_utc: String
@@ -284,6 +334,32 @@ const typeDefs = gql`
     mars_distance_mi: Float
     wikipedia: String
     details: String
+  }
+
+  type Ship {
+    ship_id: String
+    ship_name: String
+    ship_model: String
+    ship_type: String
+    roles: [String]
+    active: Boolean
+    imo: Int
+    mmsi: Int
+    abs: Int
+    class: Int
+    weight_lbs: Float
+    weight_kg: Float
+    year_built: Int
+    home_port: String
+    status: String
+    speed_kn: Float
+    course_deg: Float
+    position: Position
+    successful_landings: Int
+    attempted_landings: Int
+    missions: [BasicMission]
+    url: String
+    image: String
   }
 `;
 
