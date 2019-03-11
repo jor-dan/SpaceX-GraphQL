@@ -20,11 +20,15 @@ class SpaceXAPI extends RESTDataSource {
     limit, offset, order, sort,
   }));
 
+  dragon = ({ id }) => this.get(`dragons/${id}`);
+
+  dragons = ({ limit, offset }) => this.get('dragons', body({ limit, offset }));
+
   history = ({
     limit, offset, order, sort, id,
-  }) => (id ? this.get('history', { id }) : this.get('history', body({
+  }) => this.get('history', id ? { id } : body({
     limit, offset, order, sort,
-  })));
+  }));
 
   info = () => this.get('info');
 
@@ -61,6 +65,10 @@ class SpaceXAPI extends RESTDataSource {
   }));
 
   roadster = () => this.get('roadster');
+
+  rocket = ({ id }) => this.get(`rockets/${id}`);
+
+  rockets = ({ limit, offset }) => this.get('rockets', body({ limit, offset }));
 
   ship = ({ id }) => this.get(`ships/${id}`);
 

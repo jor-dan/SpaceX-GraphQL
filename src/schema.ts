@@ -6,6 +6,8 @@ const typeDefs = gql`
     capsules(range: CapsuleRange, limit: Int, offset: Int, order: Order, sort: String): [Capsule]
     core(core_serial: String!): Core
     cores(limit: Int, offset: Int, order: Order, sort: String): [Core]
+    dragon(id: String!): Dragon
+    dragons(limit: Int, offset: Int): [Dragon]
     history(limit: Int, offset: Int, order: Order, sort: String, id: String): [History]
     info: Info
     landingpad(id: String): Landingpad
@@ -21,6 +23,8 @@ const typeDefs = gql`
     payload(id: String!): Payload
     payloads(limit: Int, offset: Int, order: Order, sort: String): [Payload]
     roadster: Roadster
+    rocket(id: String!): Rocket
+    rockets(limit: Int, offset: Int): [Rocket]
     ship(id: String!): Ship
     ships(limit: Int, offset: Int, order: Order, sort: String): [Ship]
   }
@@ -76,10 +80,64 @@ const typeDefs = gql`
     details: String
   }
 
+  type Dimension {
+    meters: Float
+    feet: Float
+  }
+
+  type Dragon {
+    id: String
+    name: String
+    type: String
+    active: Boolean
+    crew_capacity: Int
+    sidewall_angle_deg: Int
+    orbit_duration_yr: Int
+    dry_mass_kg: Int
+    dry_mass_lb: Int
+    first_flight: String
+    heat_shield: HeatShield
+    thrusters: [Thruster]
+    launch_payload_mass: Mass
+    launch_payload_vol: PayloadVolume
+    return_payload_mass: Mass
+    return_payload_vol: PayloadVolume
+    pressurized_capsule: PressurizedCapsule
+    trunk: Trunk
+    height_w_trunk: Dimension
+    diameter: Dimension
+    wikipedia: String
+    description: String
+  }
+
+  type Engines {
+    number: Int
+    type: String
+    version: String
+    engine_loss_max: Int
+    propellant_1: String
+    propellant_2: String
+    thrust_sea_level: Thrust
+    thrust_vacuum: Thrust
+    thrust_to_weight: Float
+  }
+
+  type Fairing {
+    height: Dimension
+    diameter: Dimension
+  }
+
   type Headquarters {
     address: String
     city: String
     state: String
+  }
+
+  type HeatShield {
+    material: String
+    size_meters: Float
+    temp_degrees: Int
+    dev_partner: String
   }
 
   type History {
@@ -113,6 +171,11 @@ const typeDefs = gql`
     valuation: Float
     headquarters: Headquarters
     summary: String
+  }
+
+  type LandingLegs {
+    number: Int
+    material: String
   }
 
   type Landingpad {
@@ -262,6 +325,11 @@ const typeDefs = gql`
     longitude: Float
   }
 
+  type Mass {
+    kg: Int
+    lb: Int
+  }
+
   type Mission {
     name: String
     mission_name: String
@@ -305,9 +373,18 @@ const typeDefs = gql`
     mean_anomaly: Float
   }
 
+  type PayloadVolume {
+    cubic_meters: Int
+    cubic_feet: Int
+  }
+
   type Position {
     latitude: Float
     longitude: Float
+  }
+
+  type PressurizedCapsule {
+    payload_volume: PayloadVolume
   }
 
   type Roadster {
@@ -336,6 +413,61 @@ const typeDefs = gql`
     details: String
   }
 
+  type Rocket {
+    id: Int
+    active: Boolean
+    stages: Int
+    boosters: Int
+    cost_per_launch: Int
+    success_rate_pct: Float
+    first_flight: String
+    country: String
+    company: String
+    height: Dimension
+    mass: Mass
+    payload_weights: [RocketPayloadWeight]
+    first_stage: RocketFirstStage
+    second_stage: RocketSecondStage
+    engines: Engines
+    landing_legs: LandingLegs
+    flickr_images: [String]
+    wikipedia: String
+    description: String
+    rocket_id: String
+    rocket_name: String
+    rocket_type: String
+  }
+
+  type RocketFirstStage {
+    reusable: Boolean
+    engines: Int
+    fuel_amount_tons: Float
+    burn_time_sec: Int
+    thrust_sea_level: Thrust
+    thrust_vacuum: Thrust
+  }
+
+  type RocketPayload {
+    option_1: String
+    option_2: String
+    composite_fairing: Fairing
+  }
+
+  type RocketPayloadWeight {
+    id: String
+    name: String
+    kg: Float
+    lb: Float
+  }
+
+  type RocketSecondStage {
+    engines: Int
+    fuel_amount_tons: Float
+    burn_time_sec: Int
+    thrust: Thrust
+    payloads: RocketPayload
+  }
+
   type Ship {
     ship_id: String
     ship_name: String
@@ -360,6 +492,30 @@ const typeDefs = gql`
     missions: [BasicMission]
     url: String
     image: String
+  }
+
+  type Thrust {
+    kN: Float
+    lbf: Float
+  }
+
+  type Thruster {
+    type: String
+    amount: Int
+    pods: Int
+    fuel_1: String
+    fuel_2: String
+    thrust: Thrust
+  }
+
+  type Trunk {
+    trunk_volume: PayloadVolume
+    cargo: TrunkCargo
+  }
+
+  type TrunkCargo {
+    solar_array: Int
+    unpressurized_cargo: Boolean
   }
 `;
 

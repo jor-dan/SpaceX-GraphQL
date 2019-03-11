@@ -23,6 +23,8 @@ Complete documentation about each query is available through the [SpaceX API Doc
 | Capsules    | `range: past/upcoming`, `limit: Int`, `offset: Int`, `order: String`, `sort: String`                              |
 | Core        | `core_serial: String`                                                                                             |
 | Cores       | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
+| Dragon      | `id: String`                                                                                                      |
+| Dragons     | `limit: Int`, `offset: Int`                                                                                       |
 | History     | `limit: Int`, `offset: Int`, `id: String`                                                                         |
 | Info        |                                                                                                                   |
 | Landingpad  | `id: String`                                                                                                      |
@@ -36,6 +38,8 @@ Complete documentation about each query is available through the [SpaceX API Doc
 | Payload     | `id: String`                                                                                                      |
 | Payloads    | `limit: Int`, `offset: Int`, `order: String`, `sort: String`                                                      |
 | Roadster    |                                                                                                                   |
+| Rocket      | `id: String`                                                                                                      |
+| Rockets     | `limit: Int`, `offset: Int`                                                                                       |
 
 #### Parameters
 

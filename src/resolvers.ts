@@ -18,6 +18,10 @@ const resolvers = {
       limit, offset, order, sort,
     }),
 
+    dragon: (_, { id }, { dataSources }) => dataSources.api.dragon({ id }),
+
+    dragons: (_, { limit, offset }, { dataSources }) => dataSources.api.dragons({ limit, offset }),
+
     history: (_, {
       limit, offset, order, sort, id,
     }, { dataSources }) => dataSources.api.history({
@@ -61,6 +65,10 @@ const resolvers = {
     }),
 
     roadster: (_, __, { dataSources }) => dataSources.api.roadster(),
+
+    rocket: (_, { id }, { dataSources }) => dataSources.api.rocket({ id }),
+
+    rockets: (_, { limit, offset }, { dataSources }) => dataSources.api.rockets({ limit, offset }),
 
     ship: (_, { id }, { dataSources }) => dataSources.api.ship({ id }),
 
