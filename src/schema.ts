@@ -331,7 +331,6 @@ const typeDefs = gql`
   }
 
   type Mission {
-    name: String
     mission_name: String
     mission_id: String
     manufacturers: [String]
@@ -358,14 +357,14 @@ const typeDefs = gql`
   type PayloadOrbitParams {
     reference_system: String
     regime: String
-    longitude: Int
+    longitude: Float
     semi_major_axis_km: Float
     eccentricity: Float
     periapsis_km: Float
     apoapsis_km: Float
     inclination_deg: Float
     period_min: Float
-    lifespan_years: Int
+    lifespan_years: Float
     epoch: String
     mean_motion: Float
     raan: Float
