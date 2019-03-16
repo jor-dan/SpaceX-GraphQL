@@ -11,6 +11,12 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => ({ api: new SpaceXAPI() }),
+  introspection: true,
+  playground: {
+    settings: {
+      'editor.theme': 'light',
+    },
+  },
 });
 
 server.applyMiddleware({ app });

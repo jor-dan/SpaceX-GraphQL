@@ -9,7 +9,7 @@
 
 ## Usage
 
-URL: `https://spacexdata.herokuapp.com`
+URL: [`https://spacexdata.herokuapp.com`](https://spacexdata.herokuapp.com)
 
 Endpoint: `/graphql`
 
