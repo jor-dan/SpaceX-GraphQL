@@ -1,0 +1,6 @@
+coverage:
+  status:
+    project: off
+    patch: off
+    changes: off
+comment: off

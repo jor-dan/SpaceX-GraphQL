@@ -24,5 +24,13 @@ jobs:
           paths:
             - ~/.cache/yarn
 
-      - run: yarn lint
-      - run: yarn test
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Test
+          command: yarn test
+
+      - run:
+          name: Coverage
+          command: bash <(curl -s https://codecov.io/bash)
