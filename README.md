@@ -1,11 +1,29 @@
 <div align="center">
-<img src="https://farm5.staticflickr.com/4711/40126461411_b1ed283d45_o.jpg"/>
+<img src="https://farm5.staticflickr.com/4711/40126461411_b1ed283d45_o.jpg">
+<h1>SpaceX GraphQL</h1>
+<p>
+  A GraphQL wrapper over the
+  <a href="https://github.com/r-spacex/SpaceX-API">SpaceX REST API</a>
+</p>
+<a href="https://circleci.com/gh/jor-dan/SpaceX-GraphQL">
+  <img
+    alt="CircleCI build status"
+    src="https://img.shields.io/circleci/project/github/jor-dan/SpaceX-GraphQL/master.svg?style=for-the-badge"
+  >
+</a>
+<a href="https://codecov.io/github/jor-dan/SpaceX-GraphQL">
+  <img
+    alt="Code coverage"
+    src="https://img.shields.io/codecov/c/github/jor-dan/SpaceX-GraphQL.svg?style=for-the-badge"
+  >
+</a>
+<a href="https://github.com/jor-dan/SpaceX-GraphQL/releases">
+  <img
+    alt="GitHub release"
+    src="https://img.shields.io/github/release/jor-dan/SpaceX-GraphQL.svg?style=for-the-badge"
+  >
+</a>
 </div>
-<h1 align="center">SpaceX GraphQL</h1>
-<h3 align="center">
-    A GraphQL wrapper over the
-    <a href="https://github.com/r-spacex/SpaceX-API">SpaceX REST API</a>
-</h3>
 
 ## Usage
 
