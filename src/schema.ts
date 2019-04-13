@@ -344,6 +344,8 @@ const typeDefs = gql`
   type Payload {
     payload_id: String
     norad_id: [String]
+    cap_serial: String
+    reused: Boolean
     customers: [String]
     nationality: String
     manufacturer: String
@@ -352,6 +354,10 @@ const typeDefs = gql`
     payload_mass_lbs: Float
     orbit: String
     orbit_params: PayloadOrbitParams
+    mass_returned_kg: Float
+    mass_returned_lbs: Float
+    flight_time_sec: Int
+    cargo_manifest: String
   }
 
   type PayloadOrbitParams {
