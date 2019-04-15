@@ -295,7 +295,9 @@ const typeDefs = gql`
     webcast_liftoff: Int
     go_for_prop_loading: Int
     rp1_loading: Int
+    stage1_rp1_loading: Int
     stage1_lox_loading: Int
+    stage2_rp1_loading: Int
     stage2_lox_loading: Int
     engine_chill: Int
     prelaunch_checks: Int
@@ -304,14 +306,23 @@ const typeDefs = gql`
     ignition: Int
     liftoff: Int
     maxq: Int
+    beco: Int
+    side_core_sep: Int
+    side_core_boostback: Int
     meco: Int
     stage_sep: Int
+    center_stage_sep: Int
     second_stage_ignition: Int
+    center_core_boostback: Int
     fairing_deploy: Int
     first_stage_entry_burn: Int
+    side_core_entry_burn: Int
+    center_core_entry_burn: Int
     seco_1: Int
     first_stage_landing_burn: Int
     first_stage_landing: Int
+    side_core_landing: Int
+    center_core_landing: Int
     second_stage_restart: Int
     seco_2: Int
     payload_deploy: Int
