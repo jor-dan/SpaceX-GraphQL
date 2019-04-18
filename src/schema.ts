@@ -327,6 +327,8 @@ const typeDefs = gql`
     seco_2: Int
     payload_deploy: Int
     dragon_separation: Int
+    dragon_solar_deploy: Int
+    dragon_bay_door_deploy: Int
   }
 
   type Location {
