@@ -326,6 +326,8 @@ const typeDefs = gql`
     second_stage_restart: Int
     seco_2: Int
     payload_deploy: Int
+    payload_deploy_1: Int
+    payload_deploy_2: Int
     dragon_separation: Int
     dragon_solar_deploy: Int
     dragon_bay_door_deploy: Int
