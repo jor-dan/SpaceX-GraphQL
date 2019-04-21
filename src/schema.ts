@@ -114,6 +114,7 @@ const typeDefs = gql`
     number: Int
     type: String
     version: String
+    layout: String
     engine_loss_max: Int
     propellant_1: String
     propellant_2: String
