@@ -445,6 +445,7 @@ const typeDefs = gql`
     country: String
     company: String
     height: Dimension
+    diameter: Dimension
     mass: Mass
     payload_weights: [RocketPayloadWeight]
     first_stage: RocketFirstStage
