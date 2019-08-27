@@ -12,16 +12,15 @@
   },
   "dependencies": {
     "apollo-datasource-rest": "^0.6.1",
-    "apollo-server-express": "^2.8.1",
+    "apollo-server-express": "^2.9.0",
     "express": "^4.17.1",
-    "graphql": "^14.3.1"
+    "graphql": "^14.5.3"
   },
   "devDependencies": {
-    "@types/graphql": "^14.2.3",
-    "@types/jest": "^24.0.17",
+    "@types/jest": "^24.0.18",
     "@types/supertest": "^2.0.8",
     "@typescript-eslint/parser": "^2.0.0",
-    "eslint": "^6.2.0",
+    "eslint": "^6.2.2",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "jest": "^24.9.0",
