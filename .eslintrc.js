@@ -6,6 +6,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   rules: {
     'camelcase': 'off',
+    'import/extensions': 'off',
     'import/no-unresolved': 'off',
   }
 };
