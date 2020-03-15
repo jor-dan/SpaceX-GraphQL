@@ -11,24 +11,24 @@
     "test": "jest"
   },
   "dependencies": {
-    "apollo-datasource-rest": "^0.7.0",
-    "apollo-server-express": "^2.10.0",
+    "apollo-datasource-rest": "^0.8.0",
+    "apollo-server-express": "^2.11.0",
     "express": "^4.17.1",
     "graphql": "^14.6.0"
   },
   "devDependencies": {
-    "@types/jest": "^25.1.2",
+    "@types/jest": "^25.1.4",
     "@types/supertest": "^2.0.8",
-    "@typescript-eslint/parser": "^2.19.2",
+    "@typescript-eslint/parser": "^2.23.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
     "supertest": "^4.0.2",
-    "ts-jest": "^25.2.0",
+    "ts-jest": "^25.2.1",
     "ts-node": "^8.6.2",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.3"
   },
   "repository": {
     "type": "git",
