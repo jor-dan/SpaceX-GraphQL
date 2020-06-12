@@ -5,11 +5,11 @@
   A GraphQL wrapper over the
   <a href="https://github.com/r-spacex/SpaceX-API">SpaceX REST API</a>
 </p>
-<a href="https://circleci.com/gh/jor-dan/SpaceX-GraphQL">
-  <img
-    alt="CircleCI build status"
-    src="https://img.shields.io/circleci/project/github/jor-dan/SpaceX-GraphQL/master.svg?style=for-the-badge"
-  >
+<a href="https://github.com/jor-dan/SpaceX-GraphQL/actions">
+    <img
+      alt="GitHub Workflow Status"
+      src="https://img.shields.io/github/workflow/status/jor-dan/SpaceX-GraphQL/CI/master?style=for-the-badge"
+    >
 </a>
 <a href="https://codecov.io/github/jor-dan/SpaceX-GraphQL">
   <img
